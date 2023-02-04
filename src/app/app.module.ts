@@ -17,6 +17,9 @@ import { CustdetailsComponent } from './medicalview/custdetails/custdetails.comp
 import { BilldetailsComponent } from './medicalview/billdetails/billdetails.component';
 import { CustbillComponent } from './medicalview/custbill/custbill.component';
 import { TrashComponent } from './medicalview/trash/trash.component';
+import { ReportsComponent } from './medicalview/reports/reports.component';
+import { UserprofileComponent } from './medicalview/userprofile/userprofile.component';
+import { DashboardComponent } from './medicalview/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -35,6 +38,9 @@ import { TrashComponent } from './medicalview/trash/trash.component';
     BilldetailsComponent,
     CustbillComponent,
     TrashComponent,
+    ReportsComponent,
+    UserprofileComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
