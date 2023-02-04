@@ -20,6 +20,8 @@ import { TrashComponent } from './medicalview/trash/trash.component';
 import { ReportsComponent } from './medicalview/reports/reports.component';
 import { UserprofileComponent } from './medicalview/userprofile/userprofile.component';
 import { DashboardComponent } from './medicalview/dashboard/dashboard.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
 
 
 @NgModule({
@@ -41,6 +43,8 @@ import { DashboardComponent } from './medicalview/dashboard/dashboard.component'
     ReportsComponent,
     UserprofileComponent,
     DashboardComponent,
+    NotFoundComponent,
+    MaintenanceComponent,
   ],
   imports: [
     BrowserModule,
