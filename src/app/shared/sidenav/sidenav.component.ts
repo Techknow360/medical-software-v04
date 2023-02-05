@@ -11,5 +11,12 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  viewProfil:boolean=false;
+  viewprofile(){
+    this.viewProfil=!this.viewProfil
+  }
+  closeprofile(){
+    this.viewProfil=false
+  }
 
 }
