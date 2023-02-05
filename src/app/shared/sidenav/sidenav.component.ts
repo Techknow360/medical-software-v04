@@ -6,17 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-
+  viewProfile:boolean=false;
   constructor() { }
 
   ngOnInit(): void {
   }
-  viewProfil:boolean=false;
   viewprofile(){
-    this.viewProfil=!this.viewProfil
-  }
-  closeprofile(){
-    this.viewProfil=false
+    this.viewProfile =! this.viewProfile
   }
 
 }
