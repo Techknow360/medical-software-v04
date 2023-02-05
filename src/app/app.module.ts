@@ -22,6 +22,7 @@ import { UserprofileComponent } from './medicalview/userprofile/userprofile.comp
 import { DashboardComponent } from './medicalview/dashboard/dashboard.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
+import { PaymentsComponent } from './medicalview/payments/payments.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { MaintenanceComponent } from './shared/maintenance/maintenance.component
     DashboardComponent,
     NotFoundComponent,
     MaintenanceComponent,
+    PaymentsComponent,
   ],
   imports: [
     BrowserModule,
