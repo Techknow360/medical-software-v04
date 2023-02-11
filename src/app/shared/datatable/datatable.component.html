@@ -9,11 +9,12 @@
         <thead>
           <tr>
             <th>SI.No</th>
-            <th  *ngFor="let thead of tconfig.config" appTablesort  >{{thead.title}}</th>
+            <th  *ngFor="let thead of tconfig.config" appTablesort  >{{thead.title | uppercase}}</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page }">
+          <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page } let i = index">
+            <td>{{i + 1}}</td>
             <td *ngFor="let tdata of tconfig.config">
                 <span class="status-label align-text-top"> {{tbody[tdata.tbody]}}</span>
             </td>

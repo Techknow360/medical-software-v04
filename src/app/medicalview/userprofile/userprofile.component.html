@@ -1,181 +1,174 @@
-
-<div class="main-content">
-    <div class="fill body emp-profile-body scroll-x scroll-y scrollbox">
-        <div class="emp-profile-container d-flex flex-column">
-            <div class="float-right">
-                <a>
-                    <img src="../../../assets/images/Close-icon.png" class="icon icon-close float-right" (click)="closeprofile()">
-                </a>
+<div class="emp-profile-container d-flex flex-column">
+    <div class="float-right">
+        <!-- <a>
+            <img src="../../../assets/images/Close-icon.png" class="icon icon-close float-right" (click)="closeprofile()">
+        </a> -->
+    </div>
+    <div class="profile-sections">
+        <div class="profile-card">
+            <div class="text-center profile-card-section">
+                <div class="ember-view">
+                    <img class="emp-profile-img" src="../../../assets/images/profile.png">
+                </div>
+                <h4 class="font-mediumbold">Parthiban</h4>
+                <p class="text-grey font-small">Designation , Emp Number</p>
             </div>
-            <div class="profile-sections">
-                <div class="profile-card">
-                    <div class="text-center profile-card-section">
-                        <div class="ember-view">
-                            <img class="emp-profile-img" src="../../../assets/images/profile.png">
-                        </div>
-                        <h4 class="font-mediumbold">Parthiban</h4>
-                        <p class="text-grey font-small">Designation , Emp Number</p>
+            <hr>
+            <div class="profile-card-section mbottom-large">
+                <div class="media">
+                    <div class="pright-medium">
+                        <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/mail-icon.png">
                     </div>
-                    <hr>
-                    <div class="profile-card-section mbottom-large">
+                    <div class="media-body">
+                        <span class="tooltip-container ember-view emp-profile-data">
+                            <div class="font-mm profile-max-width text-overflow">parthisri@gmail.com</div>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="media ptop-large">
+                    <div class="pright-medium">
+                        <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/gender-icon.png">
+                    </div>
+                    <div class="media-body">
+                        <span class="tooltip-container ember-view emp-profile-data">
+                            <div class="font-mm profile-max-width text-overflow">Male</div>
+                        </span>
+                    </div>
+                </div>
+                <div class="media ptop-large">
+                    <div class="pright-medium">
+                        <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/desi-icon.png">
+                    </div>
+                    <div class="media-body">
+                        <span class="tooltip-container ember-view emp-profile-data">
+                            <div class="font-mm profile-max-width text-overflow">designation</div>
+                        </span>
+                    </div>
+                </div>
+                <div class="media ptop-large">
+                    <div class="pright-medium">
+                        <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/date-icon.png">
+                    </div>
+                    <div class="media-body">
+                        <span class="tooltip-container ember-view emp-profile-data">
+                            <div class="font-mm profile-max-width text-overflow">01-06-2022</div>
+                        </span>
+                    </div>
+                </div>
+                <div class="media ptop-large">
+                    <div class="pright-medium">
+                        <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/location-icon.png">
+                    </div>
+                    <div class="media-body">
+                        <span class="tooltip-container ember-view emp-profile-data">
+                            <div class="font-mm profile-max-width text-overflow">Singara Chennai</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="profile-card-section">
+                <div class="font-mediumbold text-uppercase text-light-grey group-small">
+                    Statutory Details
+                </div>
+                <div class="row group-small">
+                    <label class="col-12 text-light-grey font-small">Aadhaar Number</label>
+                    <div class="col-12 font-mm">1234-1234-1234</div>
+                </div>
+                <div class="row group-small">
+                    <label class="col-12 text-light-grey font-small">PAN</label>
+                    <div class="col-12 font-mm">KLXP4323D</div>
+                </div>
+            </div>
+        </div>
+        <div class="mleft-section-large w-100">
+            <div class="emp-profile-card">
+                <h5 class="emp-profile-card-header personal-detail-header">Personal Information</h5>
+                <div class="emp-details-row primary-details-row">
+                    <div class="emp-details-item">
                         <div class="media">
-                            <div class="pright-medium">
-                                <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/mail-icon.png">
+                            <div class="pright-large">
+                                <div class="icon-container">
+                                    <img class="icon icon-xxlg" src="../../../assets/images/birthday-icon.png">
+                                </div>
                             </div>
                             <div class="media-body">
-                                <span class="tooltip-container ember-view emp-profile-data">
-                                    <div class="font-mm profile-max-width text-overflow">parthisri@gmail.com</div>
-                                </span>
+                                <label class="font-mm mb-0">Date of Birth</label>
+                                <p class="font-mediumbold">05-05-2000</p>
                             </div>
                         </div>
-                        
-                        <div class="media ptop-large">
-                            <div class="pright-medium">
-                                <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/gender-icon.png">
-                            </div>
-                            <div class="media-body">
-                                <span class="tooltip-container ember-view emp-profile-data">
-                                    <div class="font-mm profile-max-width text-overflow">Male</div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="media ptop-large">
-                            <div class="pright-medium">
-                                <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/desi-icon.png">
-                            </div>
-                            <div class="media-body">
-                                <span class="tooltip-container ember-view emp-profile-data">
-                                    <div class="font-mm profile-max-width text-overflow">designation</div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="media ptop-large">
-                            <div class="pright-medium">
-                                <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/date-icon.png">
-                            </div>
-                            <div class="media-body">
-                                <span class="tooltip-container ember-view emp-profile-data">
-                                    <div class="font-mm profile-max-width text-overflow">01-06-2022</div>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="media ptop-large">
-                            <div class="pright-medium">
-                                <img class="icon icon-light icon-lg vertical-align-text-top" src="../../../assets/images/location-icon.png">
-                            </div>
-                            <div class="media-body">
-                                <span class="tooltip-container ember-view emp-profile-data">
-                                    <div class="font-mm profile-max-width text-overflow">Singara Chennai</div>
-                                </span>
-                            </div>
-                        </div>
-
                     </div>
-                    <hr>
-                    <div class="profile-card-section">
-                        <div class="font-mediumbold text-uppercase text-light-grey group-small">
-                            Statutory Details
+                    <div class="emp-details-item mobile">
+                        <div class="media">
+                            <div class="pright-large">
+                                <div class="icon-container">
+                                    <img class="icon icon-xxlg" src="../../../assets/images/mobile-phone-icon.png">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <label class="font-mm mb-0">Mobile Number</label>
+                                <p class="font-mediumbold">9840932857</p>
+                            </div>
                         </div>
-                        <div class="row group-small">
-                            <label class="col-12 text-light-grey font-small">Aadhaar Number</label>
-                            <div class="col-12 font-mm">1234-1234-1234</div>
-                        </div>
-                        <div class="row group-small">
-                            <label class="col-12 text-light-grey font-small">PAN</label>
-                            <div class="col-12 font-mm">KLXP4323D</div>
+                    </div>
+                    <div class="emp-details-item mail">
+                        <div class="media">
+                            <div class="pright-large">
+                                <div class="icon-container">
+                                    <img class="icon icon-xxlg" src="../../../assets/images/emailp-icon.png">
+                                </div>
+                            </div>
+                            <div class="media-body">
+                                <label class="font-mm mb-0">Contact Mail</label>
+                                <p class="font-mediumbold">parthisri@gmail.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="mleft-section-large w-100">
-                    <div class="emp-profile-card">
-                        <h5 class="emp-profile-card-header personal-detail-header">Personal Information</h5>
-                        <div class="emp-details-row primary-details-row">
-                            <div class="emp-details-item">
-                                <div class="media">
-                                    <div class="pright-large">
-                                        <div class="icon-container">
-                                            <img class="icon icon-xxlg" src="../../../assets/images/birthday-icon.png">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <label class="font-mm mb-0">Date of Birth</label>
-                                        <p class="font-mediumbold">05-05-2000</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="emp-details-item mobile">
-                                <div class="media">
-                                    <div class="pright-large">
-                                        <div class="icon-container">
-                                            <img class="icon icon-xxlg" src="../../../assets/images/mobile-phone-icon.png">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <label class="font-mm mb-0">Mobile Number</label>
-                                        <p class="font-mediumbold">9840932857</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="emp-details-item mail">
-                                <div class="media">
-                                    <div class="pright-large">
-                                        <div class="icon-container">
-                                            <img class="icon icon-xxlg" src="../../../assets/images/emailp-icon.png">
-                                        </div>
-                                    </div>
-                                    <div class="media-body">
-                                        <label class="font-mm mb-0">Contact Mail</label>
-                                        <p class="font-mediumbold">parthisri@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="emp-details-row">
-                            <div class="emp-details-item">
-                                <label class="font-mm">Father's Name</label>
-                                <p>Srinivasan</p>
-                            </div>
-                            <div class="emp-details-item address">
-                                <label class="font-mm">Address</label>
-                                <p>5-7 KRR Nagar Near panchayath Office Chennai-600089 </p>
+                <div class="emp-details-row">
+                    <div class="emp-details-item">
+                        <label class="font-mm">Father's Name</label>
+                        <p>Srinivasan</p>
+                    </div>
+                    <div class="emp-details-item address">
+                        <label class="font-mm">Address</label>
+                        <p>5-7 KRR Nagar Near panchayath Office Chennai-600089 </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="emp-profile-card">
+                <h5 class="emp-profile-card-header payment-detail-header">
+                    Payment Information
+                </h5>
+                <div class="display-flex">
+                    <div class="payment-card">
+                        <div class="font-small">Payment Mode</div>
+                        <div class="font-sm font-mediumbold">Direct Deposit</div>
+                        <div class="emp-bank-acc-no">
+                            <div class="font-small">Account Number</div>
+                            <div>
+                                <span class="font-mediumbold">8989999876</span>&nbsp;&nbsp;
                             </div>
                         </div>
                     </div>
-                    <hr>
-                    <div class="emp-profile-card">
-                        <h5 class="emp-profile-card-header payment-detail-header">
-                            Payment Information
-                        </h5>
-                        <div class="display-flex">
-                            <div class="payment-card">
-                                <div class="font-small">Payment Mode</div>
-                                <div class="font-sm font-mediumbold">Direct Deposit</div>
-                                <div class="emp-bank-acc-no">
-                                    <div class="font-small">Account Number</div>
-                                    <div>
-                                        <span class="font-mediumbold">8989999876</span>&nbsp;&nbsp;
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="payment-details">
-                                <div class="row emp-detail-row">
-                                    <label class="col-5 text-grey font-mm">Account Holder Name</label>
-                                    <label class="col-7">Parthiban</label>
-                                </div>
-                                <div class="row emp-detail-row inline-fields">
-                                    <label class="col-5 text-grey font-mm">Bank Name</label>
-                                    <label class="col-7">State Bank of India</label>
-                                </div>
-                                <div class="row emp-detail-row">
-                                    <label class="col-5 text-grey font-mm">IFSC Code</label>
-                                    <label class="col-7">SBI123498</label>
-                                </div>
-                                <div class="row emp-detail-row">
-                                    <label class="col-5 text-grey font-mm">Account Type</label>
-                                    <label class="col-7">Savings</label>
-                                </div>
-                                
-                            </div>
+                    <div class="payment-details">
+                        <div class="row emp-detail-row">
+                            <label class="col-5 text-grey font-mm">Account Holder Name</label>
+                            <label class="col-7">Parthiban</label>
+                        </div>
+                        <div class="row emp-detail-row inline-fields">
+                            <label class="col-5 text-grey font-mm">Bank Name</label>
+                            <label class="col-7">State Bank of India</label>
+                        </div>
+                        <div class="row emp-detail-row">
+                            <label class="col-5 text-grey font-mm">IFSC Code</label>
+                            <label class="col-7">SBI123498</label>
+                        </div>
+                        <div class="row emp-detail-row">
+                            <label class="col-5 text-grey font-mm">Account Type</label>
+                            <label class="col-7">Savings</label>
                         </div>
                     </div>
                 </div>
