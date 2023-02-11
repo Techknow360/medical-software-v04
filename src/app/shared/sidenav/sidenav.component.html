@@ -10,30 +10,30 @@
             </div>
             <ul class="nav flex-column nav-sidebar">
                 <li class="active ember-view nav-item">
-                    <a href="" routerLink="/dashboard" class="active ember-view nav-link">
+                    <a href="" routerLink="/dashboard" [routerLinkActive]="'active'" class="ember-view nav-link">
                         <img class="icon icon-lg" src="../../../assets/images/dashboard-icon.png">
                         Dashboard
                     </a>
                 </li>
                 <li class="ember-view nav-item">
-                    <a routerLink="/users" class="ember-view nav-link">
+                    <a routerLink="/users" class="ember-view nav-link" [routerLinkActive]="'active'">
                         <img class="icon icon-lg" src="../../../assets/images/user-mgm-icon.png">
                         Users
                     </a>
                 </li>
                 <li class="ember-view nav-item">
-                    <a routerLink="/vendors" class="ember-view nav-link">
+                    <a routerLink="/vendors" class="ember-view nav-link" [routerLinkActive]="'active'">
                         <img class="icon icon-lg" src="../../../assets/images/vendor-icon.png">
                         Vendors
                     </a>
                 </li>
-                <li class="ember-view nav-item">
+                <li class="ember-view nav-item" [routerLinkActive]="'active'">
                     <a href="" class="ember-view nav-link">
                         <img class="icon icon-lg" src="../../../assets/images/cust-icon.png">
                         User Management
                     </a>
                 </li>
-                <li class="ember-view nav-item">
+                <li class="ember-view nav-item" [routerLinkActive]="'active'">
                     <a href="" class="ember-view nav-link">
                         <img class="icon icon-lg" src="../../../assets/images/product-icon.png">
                         User Management
@@ -42,7 +42,7 @@
             </ul>
         </div>
         
-            <div class="user-action-container">
+            <div class="user-action-container" [routerLinkActive]="'active'">
                 <div class="user-action-item">
                     <a href="">
                         <img class="icon icon-lg" src="../../../assets/images/log-out-icon.png">
