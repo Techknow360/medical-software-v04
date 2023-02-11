@@ -24,6 +24,7 @@ import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
 import { PaymentsComponent } from './medicalview/payments/payments.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { DatatableComponent } from './shared/datatable/datatable.component';
  
 
 
@@ -49,6 +50,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NotFoundComponent,
     MaintenanceComponent,
     PaymentsComponent,
+    DatatableComponent,
   ],
   imports: [
     BrowserModule,
