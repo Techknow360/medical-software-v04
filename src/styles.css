@@ -2349,6 +2349,7 @@ pre code {
 }
 
 .table thead th {
+    cursor: pointer;
     vertical-align: bottom;
     border-bottom: 2px solid #eee
 }
@@ -11416,6 +11417,7 @@ a.text-dark:hover {
     }
 
     thead {
+        cursor: pointer;
         display: table-header-group
     }
 

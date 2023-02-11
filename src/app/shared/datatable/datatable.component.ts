@@ -11,11 +11,16 @@ export class DatatableComponent implements OnInit {
   page: any = 1;
   count: any = 10;
   colspan : string;
+  isFilterEnabled :  boolean = false
   constructor() { }
   ngOnInit(): void {
     this.colspan = this.tconfig.config.length + 1;
 
     console.log("tconfig : ",this.tconfig.config.length);
+  }
+
+  triggerRefresh(){
+    console.log("Refresh Triggered");
   }
   
 
