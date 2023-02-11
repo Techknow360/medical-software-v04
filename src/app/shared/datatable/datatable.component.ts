@@ -10,8 +10,11 @@ export class DatatableComponent implements OnInit {
   @Input('tconfig') tconfig : any;
   page: any = 1;
   count: any = 10;
+<<<<<<< Updated upstream
   colspan : string;
   isFilterEnabled :  boolean = false
+=======
+>>>>>>> Stashed changes
   constructor() { }
   ngOnInit(): void {
     this.colspan = this.tconfig.config.length + 1;
