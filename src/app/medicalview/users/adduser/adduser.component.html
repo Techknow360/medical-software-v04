@@ -1,4 +1,4 @@
-<div class="zp-container main-container liquid-container ember-view">
+<div class="zp-container main-container liquid-container ember-view scrollbox scroll-y" style="height: 500px;">
     <div class="liquid-child ember-view" style="top: 0px; left: 0px; opacity: 1;">
         <div class="zp-container liquid-container ember-view">
             <div class="liquid-child ember-view" style="top: 0px; left: 0px; opacity: 1;">
@@ -12,38 +12,151 @@
                             <form class="form-horizontal employee-form">
                                 <div class="ember-view">
                                     <div class="section">
-                                        <div class="row form-group inline-fields">
+                                        <div class="emp-profile-card">
+                                            <h5 class="emp-profile-card-header personal-detail-header">Personal Information</h5>
+                                        </div>
+                                        <div class="row form-group">
                                             <label class="col-12">Name
                                                 <span class="mandatory-field">*</span>
                                             </label>
                                             <div class="col-4">
-                                                <input placeholder="Name" class="form-control ember-text-field ember-view" type="text">
+                                                <input placeholder="First Name" class="form-control ember-text-field ember-view" type="text">
                                             </div>
                                             <div class="col-4">
-                                                <input placeholder="Name" class="form-control ember-text-field ember-view" type="text">
+                                                <input placeholder="Middle Name" class="form-control ember-text-field ember-view" type="text">
                                             </div>
                                             <div class="col-4">
-                                                <input placeholder="Name" class="form-control ember-text-field ember-view" type="text">
+                                                <input placeholder="last Name" class="form-control ember-text-field ember-view" type="text">
                                             </div>
                                         </div>
-                                        <div class="row form-group inline-fields">
-                                            <label class="col-6">Gender
-                                                <span class="mandatory-field"></span>
-                                            </label>
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div ngbDropdown class="d-inline-block">
-                                                        <button type="button" class="btn btn-outline border" id="dropdownBasic1" ngbDropdownToggle>
-                                                            Toggle dropdown
-                                                        </button>
-                                                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                                                            <button ngbDropdownItem>Action - 1</button>
-                                                            <button ngbDropdownItem>Another Action</button>
-                                                            <button ngbDropdownItem>Something else is here</button>
-                                                        </div>
-                                                    </div>
+                                        <div class="row form-group">
+                                            <div class="col-6">
+                                                <label>Father's Name<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Father Name" class="form-control ember-text-field ember-view">
                                                 </div>
                                             </div>
+                                            <div class="col-6">
+                                                <label>Address<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Address" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-4">
+                                                <label>Date of Birth<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="DD/MM/YYYY" class="form-control ember-text-field ember-view" type="date">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <label>Mobile Number<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="9876543210" class="form-control ember-text-field ember-view" type="number">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <label>Personal Mail ID<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="xyzs@mail.com" class="form-control ember-text-field ember-view" type="email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div ngbDropdown class="col-6">
+                                                <label>Gender<span class="mandatory-field">*</span></label>
+                                                <select id="gender" class="btn btn-outline border" ngbDropdownToggle>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                    <option value="male">Male</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-6">
+                                                <label>Location<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Location" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="emp-profile-card">
+                                            <h5 class="emp-profile-card-header personal-detail-header">Professional Information</h5>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-3">
+                                                <label>Employment Number<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Employment Number" class="form-control ember-text-field ember-view" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Designation<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="ex.billing" class="form-control ember-text-field ember-view" type="number">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Work Mail ID<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="xyzs@mail.com" class="form-control ember-text-field ember-view" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Date of Joining<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="xyzs@mail.com" class="form-control ember-text-field ember-view" type="date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="emp-profile-card">
+                                            <h5 class="emp-profile-card-header personal-detail-header">Account Details</h5>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-3">
+                                                <label>Account Number<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="1221111112233" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Account Holder Name<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="suraj ali kahn" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>Bank Name<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Bank name" class="form-control ember-text-field ember-view" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-3">
+                                                <label>IFSC Code<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="kkbk1234" class="form-control ember-text-field ember-view" type="date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-4">
+                                                <label>Account Type<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="Savings" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <label>Aadhaar Number<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="123233333333" class="form-control ember-text-field ember-view">
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <label>PAN<span class="mandatory-field">*</span></label>
+                                                <div>
+                                                    <input placeholder="caspb2323k" class="form-control ember-text-field ember-view" type="email">
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
