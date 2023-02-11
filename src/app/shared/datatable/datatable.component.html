@@ -1,13 +1,24 @@
 
-  <div class="emp-profile-card">
+<div class="emp-profile-card">
     <h5 class="emp-profile-card-header payment-detail-header">
         User Management        
         <span class="pull-right">
+          <p>
+            search 
+            <input type="text" [(ngModel)]="filter" />
+            show
+            <select [(ngModel)]="count" (change)="onShowCount()">
+              <option *ngFor="let items of showItems">{{items}}</option>
+            </select>
+            Entries | Current Page 
+            <select [(ngModel)]="page">
+              <option *ngFor="let items of currentPage">{{items}}</option>
+            </select>
            <button class="btn btn-light btn-lg" (click)="triggerRefresh()"><i class="fa fa-refresh"></i></button>
           <button class="btn btn-light btn-lg" (click)="isFilterEnabled=!isFilterEnabled"><i class="{{isFilterEnabled ? 'fa fa-close' : 'fa fa-filter'}}"></i></button>
+        </p>
         </span>
       </h5>
-
     </div>
     <div class="fill body payslip-list-body scroll scrollbox ">
       <table class="table zp-table paystub-table">
@@ -17,12 +28,14 @@
           </tr>
           <tr *ngIf="isFilterEnabled">
             <th *ngFor="let thead of tconfig.config">
-              <input type="search" class="form-control form-control-sm">
+              <form>
+                 <input  #columnfilter type="text" (keydown)="searchItems(thead.tbody,$event)" class="form-control form-control-sm">
+            </form>
             </th>
           </tr>
         </thead>
         <tbody *ngIf="data.length > 0 || data.length != null">
-          <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page } let i = index">
+          <tr *ngFor="let tbody of data  | paginate: { itemsPerPage: count, currentPage: page};">
             <td *ngFor="let tdata of tconfig.config">
                 <span class="status-label align-text-top"> {{tbody[tdata.tbody]}}</span>
             </td>
@@ -34,12 +47,11 @@
                 <span class="status-label align-text-top">No Result Found</span></td>
             </tr>
           </tbody>
-
         <tfoot >
         </tfoot>
       </table>
       <div class="text-right">
-        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        <pagination-controls (pageChange)="onPageChange($event)" [responsive]="responsive" [maxSize]="maxSize"></pagination-controls>
       </div>
     </div>
 

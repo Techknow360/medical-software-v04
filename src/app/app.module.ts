@@ -27,6 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DatatableComponent } from './shared/datatable/datatable.component';
 import { TablesortDirective } from './helpers/directives/tablesort.directive';
 import { AdduserComponent } from './medicalview/users/adduser/adduser.component';
+import { SearchFilterPipe } from './helpers/search-filter.pipe';
  
 
 
@@ -55,6 +56,7 @@ import { AdduserComponent } from './medicalview/users/adduser/adduser.component'
     DatatableComponent,
     TablesortDirective,
     AdduserComponent,
+    SearchFilterPipe,
   ],
   imports: [
     BrowserModule,

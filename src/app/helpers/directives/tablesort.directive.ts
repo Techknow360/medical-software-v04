@@ -28,7 +28,6 @@ export class TablesortDirective {
       icon.classList.replace('fa-long-arrow-down','fa-long-arrow-up')
     }else{
       icon.classList.replace('fa-long-arrow-up','fa-long-arrow-down')
-
     }
   }
 
