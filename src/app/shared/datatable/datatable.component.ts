@@ -10,9 +10,12 @@ export class DatatableComponent implements OnInit {
   @Input('tconfig') tconfig : any;
   page: any = 1;
   count: any = 5;
+  colspan : string;
   constructor() { }
   ngOnInit(): void {
-    console.log("tconfig : ",this.tconfig);
+    this.colspan = this.tconfig.config.length + 1;
+
+    console.log("tconfig : ",this.tconfig.config.length);
   }
   
 

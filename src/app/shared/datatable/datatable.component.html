@@ -5,7 +5,11 @@
     </h5>
     </div>
     <div class="fill body payslip-list-body scroll scrollbox ">
-      
+      <div class="emp-profile-card">
+        <h5 class="emp-profile-card-header payment-detail-header">
+            User Management
+        </h5>
+        </div>
       <table class="table zp-table paystub-table">
         <thead>
           <tr>
@@ -13,7 +17,7 @@
             <th  *ngFor="let thead of tconfig.config" appTablesort  >{{thead.title | uppercase}}</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody *ngIf="data.length > 0 || data.length != null">
           <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page } let i = index">
             <td>{{i + 1}}</td>
             <td *ngFor="let tdata of tconfig.config">
@@ -21,6 +25,13 @@
             </td>
           </tr>
         </tbody>
+        <tbody *ngIf="data.length == 0 || data.length == null">
+            <tr>
+              <td [attr.colspan]=colspan class="text-center">
+                <span class="status-label align-text-top">No Result Found</span></td>
+            </tr>
+          </tbody>
+
         <tfoot >
         </tfoot>
       </table>
