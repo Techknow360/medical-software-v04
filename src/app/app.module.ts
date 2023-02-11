@@ -23,6 +23,8 @@ import { DashboardComponent } from './medicalview/dashboard/dashboard.component'
 import { NotFoundComponent } from './shared/not-found/not-found.component';
 import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
 import { PaymentsComponent } from './medicalview/payments/payments.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+ 
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { PaymentsComponent } from './medicalview/payments/payments.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule
   ],
