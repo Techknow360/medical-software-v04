@@ -12,15 +12,23 @@ export class DatatableComponent implements OnInit {
   count: any = 10;
   colspan : string;
   isFilterEnabled :  boolean = false
+  sortDir = 1;
   constructor() { }
   ngOnInit(): void {
     this.colspan = this.tconfig.config.length + 1;
-
-    console.log("tconfig : ",this.tconfig.config.length);
   }
 
   triggerRefresh(){
     console.log("Refresh Triggered");
+  }
+
+  sortArr(colName:any){
+    this.sortDir = this.sortDir == 1 ? -1 :1
+    this.data.sort((a :string,b : string)=>{
+      a= a[colName].toLowerCase();
+      b= b[colName].toLowerCase();
+      return a.localeCompare(b) * this.sortDir;
+    });
   }
   
 

@@ -13,7 +13,7 @@
       <table class="table zp-table paystub-table">
         <thead class="bg-light">
           <tr>
-            <th  *ngFor="let thead of tconfig.config" appTablesort  >{{thead.title | uppercase}}</th>
+            <th  *ngFor="let thead of tconfig.config" appTablesort  (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
           </tr>
           <tr *ngIf="isFilterEnabled">
             <th *ngFor="let thead of tconfig.config">

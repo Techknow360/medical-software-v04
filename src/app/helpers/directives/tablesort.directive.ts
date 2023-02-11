@@ -8,13 +8,11 @@ export class TablesortDirective {
   private _shown = false;
 
   constructor(private el: ElementRef) { 
-    console.log("Default  : ",this.defaultdisplay);
     this.sortingDefaultIcon()
   }
 
   sortingDefaultIcon(){
     const parent = this.el.nativeElement;
-    console.log("Parent  : ",parent);
     const icon = document.createElement('i');
     icon.classList.add('fa')
     parent.appendChild(icon);
