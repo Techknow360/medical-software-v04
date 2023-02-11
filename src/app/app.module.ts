@@ -25,6 +25,7 @@ import { MaintenanceComponent } from './shared/maintenance/maintenance.component
 import { PaymentsComponent } from './medicalview/payments/payments.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DatatableComponent } from './shared/datatable/datatable.component';
+import { TablesortDirective } from './helpers/directives/tablesort.directive';
  
 
 
@@ -51,6 +52,7 @@ import { DatatableComponent } from './shared/datatable/datatable.component';
     MaintenanceComponent,
     PaymentsComponent,
     DatatableComponent,
+    TablesortDirective,
   ],
   imports: [
     BrowserModule,

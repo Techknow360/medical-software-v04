@@ -13,8 +13,13 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
 
     this.tableConfig = {
-      "theader" : ["Id","Fullname","Phone no","Email","Gender","Nationality"],
-      "tbody" : ["id","name","phoneno","email","gender","nationality"]
+      "config" : [
+        {"title":"Fullname","tbody":"name"},
+        {"title":"Phone no","tbody":"phoneno"},
+        {"title":"Email","tbody":"email"},
+        {"title":"Gender","tbody":"gender"},
+        {"title":"Nationality","tbody":"nationality"}
+      ],
     }
 
     this.employeedata = [

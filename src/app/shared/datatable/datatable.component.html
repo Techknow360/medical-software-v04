@@ -1,44 +1,26 @@
-<!-- <div class="container">
-    <div>
-      <h4 class="text-info">Displaying employee data.</h4>
-      <div> </div>
-      <table class="table table-bordered">
+<div class="container">
+    <div class="fill body payslip-list-body scroll scrollbox ">
+      <table class="table zp-table paystub-table">
         <thead>
           <tr>
             <th>SI.No</th>
-            <th *ngFor="let thead of tconfig.theader">{{thead}}                 
-            </th>
+            <th  *ngFor="let thead of tconfig.config" appTablesort  >{{thead.title}}</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page }">
-            <td *ngFor="let tdata of tconfig.tbody">
-                {{tbody[tdata]}}
+            <td *ngFor="let tdata of tconfig.config">
+                <span class="status-label align-text-top"> {{tbody[tdata.tbody]}}</span>
             </td>
           </tr>
         </tbody>
+        <tfoot >
+        </tfoot>
       </table>
+      <div class="text-right">
+        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+      </div>
     </div>
-       <div class="text-right">
-      <pagination-controls (pageChange)="page = $event"></pagination-controls>
-    </div>
-  </div> -->
+  </div>
 
-  <!--New table format-->
- <div class="fill body payslip-list-body scroll scroll-x scroll-y scrollbox ">
-  <table class="table zp-table paystub-table">
-    <thead>
-      <tr>
-        <th width="20%">S.No</th>
-        <th width="20%" *ngFor="let thead of tconfig.theader">{{thead}}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let tbody of data | paginate: { itemsPerPage: count, currentPage: page }">
-        <td *ngFor="let tdata of tconfig.tbody">
-          <span class="status-label align-text-top">{{tbody[tdata]}}</span>
-        </td>
-      </tr>
-    </tbody>
-  </table>
- </div>
+

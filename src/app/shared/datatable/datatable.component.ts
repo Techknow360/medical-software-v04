@@ -14,5 +14,6 @@ export class DatatableComponent implements OnInit {
   ngOnInit(): void {
     console.log("tconfig : ",this.tconfig);
   }
+  
 
 }
