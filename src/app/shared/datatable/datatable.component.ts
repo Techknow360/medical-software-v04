@@ -14,7 +14,7 @@ export class DatatableComponent implements OnInit {
   page: any = 1;
   count: any = 10;
   colspan : string;
-  filter :  string
+  filter :  string =''
   isFilterEnabled :  boolean = false
   sortDir = 1;
   responsive :  boolean = true
@@ -22,10 +22,12 @@ export class DatatableComponent implements OnInit {
   maxSize: number = 7;
   currentPage : any =[];
   dataSource : any
+  tabledata :  any = []
   constructor() { }
   ngOnInit(): void {
     this.colspan = this.tconfig.config.length + 1;
     this.onShowCount();
+    this.searchItems()
   }
 
   triggerRefresh(){
@@ -59,16 +61,24 @@ export class DatatableComponent implements OnInit {
     }
   }
 
-  searchItems(items:string,event : any) {
-    let results : any = [];
-    var searchTetx =  event.target.value;
-    const valueInput = this.columnfilter.nativeElement
-       this.data.forEach(it => {
-         if (it[items].toLowerCase().includes(searchTetx.toLowerCase())) {
-            results.push(it);
-         }
-       });
-       console.log("Result  : ",this.data);
+  searchItems() {
+    this.tabledata = this.data.filter((items) => this.isMatch(items));
    }
+
+   isMatch(item : any) {
+    if (item instanceof Object) {
+      return Object.keys(item).some((k) => this.isMatch(item[k]));
+    } else {
+      var searchItem  = this.stringSanitize(item);
+      var filterdata  = this.stringSanitize(this.filter);
+      console.log("FIlter Data : ",filterdata);
+      return searchItem.indexOf(filterdata) > -1
+    }
+  }
+
+  stringSanitize(value){
+   return value.toString().toLowerCase().trim().replace(/\s+/g, "");
+  }
+
 
 }
