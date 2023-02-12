@@ -13953,6 +13953,26 @@ a.disabled:hover {
     justify-content: space-between;
     box-shadow: 0 4px 25px 0 rgba(0, 0, 0, .05)
 }
+.buttonprimary{
+    width:100px;
+    height: 50px;
+    color:white;
+    font-weight:500;
+    border-radius: 5px;
+    border-color:#009DFF;
+    text-align:center;
+    background:#009dff;
+}
+.buttonsecondary{
+    width:100px;
+    height: 50px;
+    color:black;
+    font-weight:500;
+    border-radius: 5px;
+    border-color:#009DFF;
+    text-align: center;
+    margin-left: 10px;
+}
 
 .sidebar.embedded-in-zoho-service {
     bottom: 28px
