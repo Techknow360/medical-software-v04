@@ -36,7 +36,7 @@ export class DatatableComponent implements OnInit {
 
   sortArr(colName:any){
     this.sortDir = this.sortDir == 1 ? -1 :1
-    this.data.sort((a :string,b : string)=>{
+    this.tabledata.sort((a :string,b : string)=>{
       a= a[colName].toLowerCase();
       b= b[colName].toLowerCase();
       return a.localeCompare(b) * this.sortDir;
@@ -60,7 +60,7 @@ export class DatatableComponent implements OnInit {
       this.page = 1
     }
   }
-
+  
   searchItems() {
     this.tabledata = this.data.filter((items) => this.isMatch(items));
    }
@@ -71,7 +71,21 @@ export class DatatableComponent implements OnInit {
     } else {
       var searchItem  = this.stringSanitize(item);
       var filterdata  = this.stringSanitize(this.filter);
-      console.log("FIlter Data : ",filterdata);
+      return searchItem.indexOf(filterdata) > -1
+    }
+  }
+
+  coulmnSearch(key : string,event  :  any){
+    var sText  = event.target.value;
+    this.tabledata =  this.data.filter((item) => this.nestedSearch(item,key,sText))
+  }
+
+  nestedSearch(item,key,sText){
+    if (item instanceof Object) {
+      return this.nestedSearch(item[key],key,sText);
+    } else {
+      var searchItem  = this.stringSanitize(item);
+      var filterdata  = this.stringSanitize(sText);
       return searchItem.indexOf(filterdata) > -1
     }
   }

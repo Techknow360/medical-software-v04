@@ -5,7 +5,7 @@
         <span class="pull-right">
           <p>
             search 
-            <input type="text" [(ngModel)]="filter" (ngModelChange)="searchItems()" />
+            <input type="search" [(ngModel)]="filter" (ngModelChange)="searchItems()" />
             show
             <select [(ngModel)]="count" (change)="onShowCount()">
               <option *ngFor="let items of showItems">{{items}}</option>
@@ -29,7 +29,7 @@
           <tr *ngIf="isFilterEnabled">
             <th *ngFor="let thead of tconfig.config">
               <form>
-                 <input  #columnfilter type="text"  class="form-control form-control-sm">
+                 <input type="search"  class="form-control form-control-sm" (keydown)="coulmnSearch(thead.tbody,$event)">
             </form>
             </th>
           </tr>
