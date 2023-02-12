@@ -27,10 +27,8 @@
             <th  *ngFor="let thead of tconfig.config" appTablesort  (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
           </tr>
           <tr *ngIf="isFilterEnabled">
-            <th *ngFor="let thead of tconfig.config">
-              <form>
-                 <input type="search"  class="form-control form-control-sm" (keydown)="coulmnSearch(thead.tbody,$event)">
-            </form>
+            <th *ngFor="let thead of tconfig.config" >
+                 <input type="search"   *ngIf="thead?.filter == true ? true  :  false" class="form-control form-control-sm" (change)="coulmnSearch(thead.tbody,$event)">
             </th>
           </tr>
         </thead>

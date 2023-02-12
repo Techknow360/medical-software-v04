@@ -14,11 +14,11 @@ export class UsersComponent implements OnInit {
 
     this.tableConfig = {
       "config" : [
-        {"title":"Fullname","tbody":"name","width":"10"},
-        {"title":"Phone no","tbody":"phoneno","width":"10"},
-        {"title":"Email","tbody":"email","width":"10"},
-        {"title":"Gender","tbody":"gender","width":"20"},
-        {"title":"Nationality","tbody":"nationality","width":"20"}
+        {"title":"Fullname","tbody":"name","width":"10","filter" : true},
+        {"title":"Phone no","tbody":"phoneno","width":"10","filter" : true},
+        {"title":"Email","tbody":"email","width":"10","filter" : false},
+        {"title":"Gender","tbody":"gender","width":"20","filter" : true},
+        {"title":"Nationality","tbody":"nationality","width":"20","filter" : true}
       ],
     }
 

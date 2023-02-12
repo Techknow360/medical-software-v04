@@ -77,7 +77,11 @@ export class DatatableComponent implements OnInit {
 
   coulmnSearch(key : string,event  :  any){
     var sText  = event.target.value;
-    this.tabledata =  this.data.filter((item) => this.nestedSearch(item,key,sText))
+    if(this.filter == '' && this.filter.length <= 0){
+      this.tabledata =  this.data.filter((item) => this.nestedSearch(item,key,sText))
+    }else{
+      this.tabledata =  this.tabledata .filter((item) => this.nestedSearch(item,key,sText))
+    }
   }
 
   nestedSearch(item,key,sText){
