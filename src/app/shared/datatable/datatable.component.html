@@ -1,56 +1,80 @@
 
 <div class="emp-profile-card">
-    <h5 class="emp-profile-card-header payment-detail-header">
-        User Management        
-        <span class="pull-right">
-          <p>
-            search 
-            <input type="search" [(ngModel)]="filter" (ngModelChange)="searchItems()" />
-            show
-            <select [(ngModel)]="count" (change)="onShowCount()">
-              <option *ngFor="let items of showItems">{{items}}</option>
-            </select>
-            Entries | Current Page 
-            <select [(ngModel)]="page">
-              <option *ngFor="let items of currentPage">{{items}}</option>
-            </select>
-           <button class="btn btn-light btn-lg" (click)="triggerRefresh()"><i class="fa fa-refresh"></i></button>
-          <button class="btn btn-light btn-lg" (click)="isFilterEnabled=!isFilterEnabled"><i class="{{isFilterEnabled ? 'fa fa-close' : 'fa fa-filter'}}"></i></button>
-        </p>
-        </span>
-      </h5>
-    </div>
-    <div class="fill body payslip-list-body scroll scrollbox ">
-      <table class="table zp-table paystub-table">
-        <thead class="bg-light">
-          <tr>
-            <th  *ngFor="let thead of tconfig.config" appTablesort  (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
-          </tr>
-          <tr *ngIf="isFilterEnabled">
-            <th *ngFor="let thead of tconfig.config" >
-                 <input type="search"   *ngIf="thead?.filter == true ? true  :  false" class="form-control form-control-sm" (change)="coulmnSearch(thead.tbody,$event)">
-            </th>
-          </tr>
-        </thead>
-        <tbody *ngIf="data.length > 0 || data?.length != null">
-          <tr *ngFor="let tbody of tabledata  | paginate: { itemsPerPage: count, currentPage: page};">
-            <td *ngFor="let tdata of tconfig.config">
-                <span class="status-label align-text-top"> {{tbody[tdata.tbody]}}</span>
-            </td>
-          </tr>
-        </tbody>
-        <tbody *ngIf="data.length == 0 || data.length == null">
-            <tr>
-              <td [attr.colspan]=colspan class="text-center">
-                <span class="status-label align-text-top">No Result Found</span></td>
-            </tr>
-          </tbody>
-        <tfoot >
-        </tfoot>
-      </table>
-      <div class="text-right">
-        <pagination-controls (pageChange)="onPageChange($event)" [responsive]="responsive" [maxSize]="maxSize"></pagination-controls>
-      </div>
-    </div>
+<h5 class="emp-profile-card-header payment-detail-header">
+    User Management        
+  </h5>
+</div>
+<div class="pull-left">
+  <span *ngIf="tableconfig?.showentries">
+    show
+    <select [(ngModel)]="count" (change)="onShowCount();showEntries('SHOWCOUNT')">
+      <option *ngFor="let items of showItems">{{items}}</option>
+    </select>
+    Entries
+  </span>
+  <span *ngIf="tableconfig?.currentpage">
+    | Current Page 
+    <select [(ngModel)]="page" (change)="showEntries('PAGE')">
+      <option *ngFor="let items of currentPage">{{items}}</option>
+    </select>
+  </span>
+</div>
+<div class="pull-right">
+  <span *ngIf="tableconfig?.search">
+    search <input type="search" [(ngModel)]="filter" (ngModelChange)="searchItems()" />
+  </span>
+  <span *ngIf="tableconfig?.refresh">
+    <button class="btn btn-light btn-lg" (click)="triggerRefresh()"><i class="fa fa-refresh"></i></button>
+  </span>
+  <span *ngIf="tableconfig?.colsearch">
+     <button class="btn btn-light btn-lg" (click)="isFilterEnabled=!isFilterEnabled"><i class="{{isFilterEnabled ? 'fa fa-close' : 'fa fa-filter'}}"></i></button>
+  </span>
+  <span *ngIf="tableconfig?.download">
+    <button  class="btn btn-light btn-lg" (click)="exportexcel()"><i class="fa fa-download"></i></button>
+  </span>
+  <span *ngIf="tableconfig?.add">
+    <button  class="btn btn-light btn-lg" (click)="openNewModel()"><i  class="fa fa-create">+</i></button>
+  </span>
+</div>
+
+<div>
+  <table class="table" id="{{tableconfig?.name}}">
+    <thead class="bg-light">
+      <tr>
+        <th  *ngFor="let thead of tconfig.config" appTablesort  (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
+      </tr>
+      <tr *ngIf="isFilterEnabled">
+        <th *ngFor="let thead of tconfig.config" >
+              <input type="search"   *ngIf="thead?.filter == true ? true  :  false" class="form-control form-control-sm" (change)="coulmnSearch(thead.tbody,$event)">
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngIf="data.length > 0 || data?.length != null">
+      <tr *ngFor="let tbody of tabledata  | paginate: { itemsPerPage: count, currentPage: page};">
+        <td *ngFor="let tdata of tconfig.config">
+            <span> {{tbody[tdata.tbody]}}</span>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="data.length == 0 || data.length == null">
+        <tr>
+          <td [attr.colspan]=colspan class="text-center">
+            <span >No Result Found</span></td>
+        </tr>
+      </tbody>
+    <tfoot >
+    </tfoot>
+  </table>
+  <div>
+    <span class="pull-left" *ngIf="tableconfig?.showingentries" >
+      Showing {{showStartCount}} to {{showEndCount}} of {{isSearchEnabled ?  totalFilteredCount : totalCount }} entries 
+      <span *ngIf="isSearchEnabled">(filtered from {{totalCount}} total entries)</span>
+    </span>
+    <span class="pull-right">
+      <pagination-controls (pageChange)="onPageChange($event)" [responsive]="responsive"
+      [maxSize]="maxSize"></pagination-controls>
+    </span>
+  </div>
+</div>
 
 

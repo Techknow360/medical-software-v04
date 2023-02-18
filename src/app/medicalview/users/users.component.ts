@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-users',
@@ -8,15 +9,16 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   employeedata :  any
   tableConfig  :  any
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
 
     this.tableConfig = {
+      "tableconfig" : {"name":"userDetails","download": true,"search":true,"showentries":true,"currentpage": true,"refresh":true,"showingentries":true},
       "config" : [
         {"title":"Fullname","tbody":"name","width":"10","filter" : true},
         {"title":"Phone no","tbody":"phoneno","width":"10","filter" : true},
-        {"title":"Email","tbody":"email","width":"10","filter" : false},
+        {"title":"Email","tbody":"email","width":"10","filter" : true},
         {"title":"Gender","tbody":"gender","width":"20","filter" : true},
         {"title":"Nationality","tbody":"nationality","width":"20","filter" : true}
       ],
@@ -42,8 +44,9 @@ export class UsersComponent implements OnInit {
       { 'id': 17, 'name': 'Inglis Treweela', 'phoneno': '(718) 4157883', 'email': 'itreweelag@tripod.com', 'gender': 'Male', 'nationality': 'Finland' },
       { 'id': 18, 'name': 'Yardley Georgeot', 'phoneno': '(213) 5730967', 'email': 'ygeorgeoth@360.cn', 'gender': 'Male', 'nationality': 'Portugal' },
       { 'id': 19, 'name': 'Hestia Palffrey', 'phoneno': '(349) 6453938', 'email': 'hpalffreyi@nba.com', 'gender': 'Female', 'nationality': 'Madagascar' },
-      { 'id': 20, 'name': 'Gwendolyn Mordon', 'phoneno': '(474) 3068249', 'email': 'gmordonj@uiuc.edu', 'gender': 'Female', 'nationality': 'Greece' }
+      { 'id': 20, 'name': 'Gwendolyn Mordon', 'phoneno': '(474) 3068249', 'email': 'gmordonj@uiuc.edu', 'gender': 'Female', 'nationality': 'Greece' },
     ];
   }
+
 
 }
