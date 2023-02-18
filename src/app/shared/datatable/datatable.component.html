@@ -5,14 +5,14 @@
   </h5>
 </div>
 <div class="pull-left">
-  <span *ngIf="tableconfig?.showentries">
+  <span *ngIf="tableconfig?.showentries && this.tableconfig.pagination">
     show
     <select [(ngModel)]="count" (change)="onShowCount();showEntries('SHOWCOUNT')">
       <option *ngFor="let items of showItems">{{items}}</option>
     </select>
     Entries
   </span>
-  <span *ngIf="tableconfig?.currentpage">
+  <span *ngIf="tableconfig?.currentpage && this.tableconfig.pagination">
     | Current Page 
     <select [(ngModel)]="page" (change)="showEntries('PAGE')">
       <option *ngFor="let items of currentPage">{{items}}</option>
@@ -30,7 +30,7 @@
      <button class="btn btn-light btn-lg" (click)="isFilterEnabled=!isFilterEnabled"><i class="{{isFilterEnabled ? 'fa fa-close' : 'fa fa-filter'}}"></i></button>
   </span>
   <span *ngIf="tableconfig?.download">
-    <button  class="btn btn-light btn-lg" (click)="exportexcel()"><i class="fa fa-download"></i></button>
+    <button  class="btn btn-light btn-lg" (click)="exportexcel(tableconfig?.name)"><i class="fa fa-download"></i></button>
   </span>
   <span *ngIf="tableconfig?.add">
     <button  class="btn btn-light btn-lg" (click)="openNewModel()"><i  class="fa fa-create">+</i></button>
@@ -38,10 +38,10 @@
 </div>
 
 <div>
-  <table class="table" id="{{tableconfig?.name}}">
+  <table class="table table-hover" id={{tableconfig?.name}}>
     <thead class="bg-light">
       <tr>
-        <th  *ngFor="let thead of tconfig.config" appTablesort  (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
+        <th  *ngFor="let thead of tconfig.config" Tablesort  [enablesort]=tableconfig?.sorting (click)="sortArr(thead.tbody)" >{{thead.title | uppercase}}</th>
       </tr>
       <tr *ngIf="isFilterEnabled">
         <th *ngFor="let thead of tconfig.config" >
@@ -66,11 +66,11 @@
     </tfoot>
   </table>
   <div>
-    <span class="pull-left" *ngIf="tableconfig?.showingentries" >
+    <span class="pull-left" *ngIf="tableconfig?.showingentries && this.tableconfig.pagination" >
       Showing {{showStartCount}} to {{showEndCount}} of {{isSearchEnabled ?  totalFilteredCount : totalCount }} entries 
       <span *ngIf="isSearchEnabled">(filtered from {{totalCount}} total entries)</span>
     </span>
-    <span class="pull-right">
+    <span class="pull-right" *ngIf="this.tableconfig.pagination">
       <pagination-controls (pageChange)="onPageChange($event)" [responsive]="responsive"
       [maxSize]="maxSize"></pagination-controls>
     </span>

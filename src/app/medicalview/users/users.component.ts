@@ -14,7 +14,8 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
 
     this.tableConfig = {
-      "tableconfig" : {"name":"userDetails","download": true,"search":true,"showentries":true,"currentpage": true,"refresh":true,"showingentries":true},
+      "tableconfig" : {"name":"userDetails","download": true,"search":true,"showentries":true,"currentpage": true,
+      "refresh":true,"showingentries":true,"sorting": true,"pagination":false},
       "config" : [
         {"title":"Fullname","tbody":"name","width":"10","filter" : true},
         {"title":"Phone no","tbody":"phoneno","width":"10","filter" : true},

@@ -35,12 +35,17 @@ export class DatatableComponent implements OnInit {
   ngOnInit(): void {
     this.colspan = this.tconfig.config.length + 1;
     this.tableconfig = this.tconfig.tableconfig
-    console.log("tableConfig",this.tableconfig);
-    this.onShowCount();
-    this.searchItems();
-    this.showEntries();
-    if(this.data != null && this.data.length > 0){
-      this.totalCount = this.data.length
+    if(this.tableconfig.pagination){
+      this.onShowCount();
+      this.searchItems();
+      this.showEntries();
+      if(this.data != null && this.data.length > 0){
+        this.totalCount = this.data.length
+      }
+    }else{
+      this.page = 1;
+      this.count = this.data.length
+      this.tabledata = this.data
     }
   }
 
@@ -49,12 +54,14 @@ export class DatatableComponent implements OnInit {
   }
 
   sortArr(colName:any){
-    this.sortDir = this.sortDir == 1 ? -1 :1
-    this.tabledata.sort((a :string,b : string)=>{
-      a= a[colName].toLowerCase();
-      b= b[colName].toLowerCase();
-      return a.localeCompare(b) * this.sortDir;
-    });
+    if(this.tableconfig.sorting){
+      this.sortDir = this.sortDir == 1 ? -1 :1
+      this.tabledata.sort((a :string,b : string)=>{
+        a= a[colName].toLowerCase();
+        b= b[colName].toLowerCase();
+        return a.localeCompare(b) * this.sortDir;
+      });
+    }
   }
 
 
@@ -148,10 +155,9 @@ export class DatatableComponent implements OnInit {
     }
   }
 
-  exportexcel(): void
+  exportexcel(tableId): void
   {
-    /* pass here the table id */
-    let element = document.getElementById('tblData');
+    let element = document.getElementById(tableId);
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
  
     /* generate workbook and add the worksheet */
@@ -159,7 +165,7 @@ export class DatatableComponent implements OnInit {
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
  
     /* save to file */  
-    XLSX.writeFile(wb,'ExcelSheet.xlsx');
+    XLSX.writeFile(wb,tableId+'.xlsx');
  
   }
 }

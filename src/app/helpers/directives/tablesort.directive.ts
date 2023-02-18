@@ -1,10 +1,10 @@
 import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appTablesort]'
+  selector: '[Tablesort]'
 })
 export class TablesortDirective {
-  @Input('defaultdisplay')  defaultdisplay : boolean = false
+  @Input() enablesort : string
   private _shown = false;
 
   constructor(private el: ElementRef) { 
@@ -17,7 +17,9 @@ export class TablesortDirective {
     icon.classList.add('fa')
     parent.appendChild(icon);
     parent.addEventListener('click', () => {
-      this.toggleSorting(icon)
+      if(this.enablesort){
+        this.toggleSorting(icon)
+      }
     });
   }
 
