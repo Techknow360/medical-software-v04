@@ -13845,7 +13845,8 @@ a.disabled:hover {
 }
 
 .scroll-y {
-    overflow-y: auto
+    overflow-y: auto;
+    height:500px;
 }
 
 .scroll-x {
@@ -13936,7 +13937,7 @@ a.disabled:hover {
 }
 
 .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
