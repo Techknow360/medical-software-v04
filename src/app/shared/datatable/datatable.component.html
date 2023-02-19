@@ -24,7 +24,7 @@
     search <input type="search" [(ngModel)]="filter" (ngModelChange)="searchItems()" />
   </span>
   <span *ngIf="tableconfig?.refresh">
-    <button class="btn btn-light btn-lg" (click)="triggerRefresh()"><i class="fa fa-refresh"></i></button>
+    <button class="btn btn-light btn-lg" (click)="onHeaderActionClick('REFRESH')"><i class="fa fa-refresh"></i></button>
   </span>
   <span *ngIf="tableconfig?.colsearch">
      <button class="btn btn-light btn-lg" (click)="isFilterEnabled=!isFilterEnabled"><i class="{{isFilterEnabled ? 'fa fa-close' : 'fa fa-filter'}}"></i></button>
@@ -33,11 +33,11 @@
     <button  class="btn btn-light btn-lg" (click)="exportexcel(tableconfig?.name)"><i class="fa fa-download"></i></button>
   </span>
   <span *ngIf="tableconfig?.add">
-    <button  class="btn btn-light btn-lg" (click)="openNewModel()"><i  class="fa fa-create">+</i></button>
+    <button  class="btn btn-light btn-lg" (click)="onHeaderActionClick('ADD')"><i  class="fa fa-create">+</i></button>
   </span>
 </div>
 
-<div>
+<div class="wrapper">
   <table class="table table-hover" id={{tableconfig?.name}}>
     <thead class="bg-light">
       <tr>

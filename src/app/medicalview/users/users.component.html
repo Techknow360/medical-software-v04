@@ -1,2 +1,12 @@
-<app-datatable [data]="employeedata" [tconfig]="tableConfig"></app-datatable>
-<!-- <app-adduser></app-adduser> -->
+<app-datatable [data]="employeedata" [tconfig]="tableConfig" (headerAction)="headerAction($event)"  (bodyAction)="bodyAction($event)"></app-datatable>
+<ng-template #content> 
+    <div class="modal-header">
+        <div class="emp-profile-card">
+            <p class="emp-profile-card-header personal-detail-header">Personal Information</p>
+        </div>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismissAll()"></button>
+	</div>
+    <div class="modal-body">
+        <app-adduser></app-adduser>
+    </div>
+</ng-template>

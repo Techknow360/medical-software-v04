@@ -6,6 +6,8 @@ import { Directive, ElementRef, Input } from '@angular/core';
 export class TablesortDirective {
   @Input() enablesort : string
   private _shown = false;
+  public _previousSort :  any
+  public flag : boolean = true
 
   constructor(private el: ElementRef) { 
     this.sortingDefaultIcon()

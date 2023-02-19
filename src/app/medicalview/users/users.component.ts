@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -9,13 +9,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class UsersComponent implements OnInit {
   employeedata :  any
   tableConfig  :  any
-  constructor(private modalService: NgbModal) { }
-
+  constructor(public  modalService: NgbModal) { }
+  @ViewChild('content')  content : any
   ngOnInit(): void {
 
     this.tableConfig = {
       "tableconfig" : {"name":"userDetails","download": true,"search":true,"showentries":true,"currentpage": true,
-      "refresh":true,"showingentries":true,"sorting": true,"pagination":false},
+      "refresh":true,"showingentries":true,"sorting": true,"pagination":true,"add":true},
       "config" : [
         {"title":"Fullname","tbody":"name","width":"10","filter" : true},
         {"title":"Phone no","tbody":"phoneno","width":"10","filter" : true},
@@ -47,6 +47,15 @@ export class UsersComponent implements OnInit {
       { 'id': 19, 'name': 'Hestia Palffrey', 'phoneno': '(349) 6453938', 'email': 'hpalffreyi@nba.com', 'gender': 'Female', 'nationality': 'Madagascar' },
       { 'id': 20, 'name': 'Gwendolyn Mordon', 'phoneno': '(474) 3068249', 'email': 'gmordonj@uiuc.edu', 'gender': 'Female', 'nationality': 'Greece' },
     ];
+  }
+
+
+  headerAction(type){
+    this.modalService.open(this.content,{size: 'xl'});
+  }
+
+  bodyAction(type){
+    console.log("Type  body",type)
   }
 
 

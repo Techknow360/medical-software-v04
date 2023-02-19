@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, Output, EventEmitter } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import * as XLSX from 'xlsx';
 
@@ -12,6 +12,8 @@ import * as XLSX from 'xlsx';
 export class DatatableComponent implements OnInit {
   @Input('data') data : any[];
   @Input('tconfig') tconfig : any;
+  @Output('bodyAction') bodyAction : EventEmitter<any> = new EventEmitter();
+  @Output('headerAction') headerAction : EventEmitter<any> = new EventEmitter();
   @ViewChild('columnfilter') columnfilter:ElementRef;
   page: any = 1;
   count: any = 10;
@@ -47,10 +49,6 @@ export class DatatableComponent implements OnInit {
       this.count = this.data.length
       this.tabledata = this.data
     }
-  }
-
-  triggerRefresh(){
-    console.log("Refresh Triggered");
   }
 
   sortArr(colName:any){
@@ -131,10 +129,6 @@ export class DatatableComponent implements OnInit {
    return value.toString().toLowerCase().trim().replace(/\s+/g, "");
   }
 
-  openNewModel(){
-    console.log("OPen New");
-  }
-
   showEntries(event?){
     this.onShowCount();
     if(event == 'SHOWCOUNT'){
@@ -159,13 +153,21 @@ export class DatatableComponent implements OnInit {
   {
     let element = document.getElementById(tableId);
     const ws: XLSX.WorkSheet =XLSX.utils.table_to_sheet(element);
- 
-    /* generate workbook and add the worksheet */
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
- 
-    /* save to file */  
     XLSX.writeFile(wb,tableId+'.xlsx');
  
+  }
+
+  onRefresh(){
+
+  }
+
+  onBodyActionClick(type){
+    this.bodyAction.emit({'Action':type});
+  }
+
+  onHeaderActionClick(type){
+    this.headerAction.emit({'Action':type})
   }
 }
