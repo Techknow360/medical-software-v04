@@ -27,7 +27,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { DatatableComponent } from './shared/datatable/datatable.component';
 import { TablesortDirective } from './helpers/directives/tablesort.directive';
 import { AdduserComponent } from './medicalview/users/adduser/adduser.component';
-import { SearchFilterPipe } from './helpers/search-filter.pipe';
+import { SearchFilterPipe } from './helpers/pipes/search-filter.pipe';
 import { ErrormessageDirective } from './helpers/directives/errormessage.directive';
  
 

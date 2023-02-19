@@ -5,6 +5,7 @@ import { Directive,Input,ElementRef } from '@angular/core';
 })
 export class ErrormessageDirective {
   @Input('FormErrors') FormErrors :  any 
+  @Input('isSubmitted') isSubmitted  : any
 
   constructor(private el: ElementRef) 
   { 
