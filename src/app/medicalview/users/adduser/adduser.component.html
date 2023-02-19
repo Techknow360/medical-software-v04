@@ -37,7 +37,7 @@
                 <span class="mandatory-field">*</span>
             </label>
             <div class="col-4">
-                <input placeholder="First Name" formControlName="firstName" Errormessage [FormErrors]="userFormControl.firstName.status" class="ft-input-value"  type="text">
+                <input placeholder="First Name" formControlName="firstName" Errormessage [FormErrors]="userFormControl.firstName.status" [isSubmitted]="isSubmitted" class="ft-input-value"  type="text">
                 <div class="text-danger" *ngIf="userFormControl.firstName.errors && (isSubmitted || userFormControl.firstName.touched )">
                     <label for="" *ngIf="userFormControl.firstName.errors.required">First name is Required</label>
                 </div>
@@ -210,7 +210,9 @@
             
         </div> -->
         <div class="text-center">
-            <button class=" btn btn-primary" (click)="saveUserFormDetails()">Submit</button>
+            <button [disabled]="isSubmitted" class=" btn btn-primary" (click)="saveUserFormDetails()">
+                <span *ngIf="isSubmitted" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Save</button>
         </div>
     </form>
     </div>
