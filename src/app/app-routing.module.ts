@@ -12,6 +12,8 @@ import { TrashComponent } from './medicalview/trash/trash.component';
 import { UserprofileComponent } from './medicalview/userprofile/userprofile.component';
 import { UsersComponent } from './medicalview/users/users.component';
 import { VendorsComponent } from './medicalview/vendors/vendors.component';
+import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
+import { NotFoundComponent } from './shared/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,10 @@ const routes: Routes = [
   {
     path : 'users',
     component : UsersComponent
+  },
+  {
+    path : 'billdetails',
+    component :  CustdetailsComponent
   },
   {
     path : 'userprofile',
@@ -61,7 +67,19 @@ const routes: Routes = [
   {
     path : 'payments',
     component : PaymentsComponent
-  }
+  },
+  {
+    path : 'not-found',
+    component : NotFoundComponent
+  },
+  {
+    path : 'undermaintenance',
+    component : MaintenanceComponent
+  },
+  {
+    path : '**',
+    component : NotFoundComponent
+  },
 ];
 
 @NgModule({
