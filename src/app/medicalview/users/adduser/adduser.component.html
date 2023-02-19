@@ -92,7 +92,7 @@
             <div class="col-4">
                 <label>Mobile Number<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="9876543210" formControlName="mobileno" Errormessage [FormErrors]="userFormControl.mobileno.status" class="ft-input-value" type="number">
+                    <input placeholder="Mobile Number" formControlName="mobileno" Errormessage [FormErrors]="userFormControl.mobileno.status" class="ft-input-value" type="number">
                     <div class="text-danger" *ngIf="userFormControl.mobileno.errors && (isSubmitted || userFormControl.mobileno.touched )">
                         <label for="" *ngIf="userFormControl.mobileno.errors.required">Mobile Number is Required</label>
                     </div>
@@ -101,7 +101,7 @@
             <div class="col-4">
                 <label>Email<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="xyzs@mail.com" formControlName="email"  Errormessage [FormErrors]="userFormControl.email.status" class="ft-input-value" type="email">
+                    <input placeholder="Email" formControlName="email"  Errormessage [FormErrors]="userFormControl.email.status" class="ft-input-value" type="email">
                     <div class="text-danger" *ngIf="userFormControl.email.errors && (isSubmitted || userFormControl.email.touched )">
                         <label for="" *ngIf="userFormControl.email.errors.required">Email is Required</label>
                     </div>

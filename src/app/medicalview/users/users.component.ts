@@ -9,6 +9,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 export class UsersComponent implements OnInit {
   employeedata :  any
   tableConfig  :  any
+  spinnerLoad : boolean = false
   constructor(public  modalService: NgbModal,config: NgbModalConfig) {
     config.backdrop = 'static';
 		config.keyboard = false;
@@ -56,6 +57,8 @@ export class UsersComponent implements OnInit {
   headerAction(type){
     if(type.Action=='ADD'){
       this.modalService.open(this.content,{size: 'xl'});
+    }else if(type.Action=='REFRESH'){
+      this.spinnerLoad = true
     }
   }
 
