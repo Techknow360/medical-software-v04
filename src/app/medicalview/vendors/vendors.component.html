@@ -1,1 +1,10 @@
-<p>vendors works!</p>
+<app-datatable [data]="employeedata" [tconfig]="tableConfig" (headerAction)="headerAction($event)"  (bodyAction)="bodyAction($event)"></app-datatable>
+<ng-template #content> 
+    <div class="modal-header">
+        <h5>Vendors Information</h5>
+		<button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismissAll()"></button>
+	</div>
+    <div class="modal-body">
+        <app-adduser></app-adduser>
+    </div>
+</ng-template>

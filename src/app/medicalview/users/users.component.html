@@ -1,9 +1,6 @@
 <app-datatable [data]="employeedata" [tconfig]="tableConfig" (headerAction)="headerAction($event)"  (bodyAction)="bodyAction($event)"></app-datatable>
-<ng-template #content> 
+<ng-template #content let-c="close" let-d="dismiss"> 
     <div class="modal-header">
-        <!-- <div class="emp-profile-card">
-            <p class="emp-profile-card-header personal-detail-header">Personal Information</p>
-        </div> -->
         <h5>Personal Information</h5>
 		<button type="button" class="btn-close" aria-label="Close" (click)="modalService.dismissAll()"></button>
 	</div>

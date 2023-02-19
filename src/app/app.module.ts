@@ -28,6 +28,7 @@ import { DatatableComponent } from './shared/datatable/datatable.component';
 import { TablesortDirective } from './helpers/directives/tablesort.directive';
 import { AdduserComponent } from './medicalview/users/adduser/adduser.component';
 import { SearchFilterPipe } from './helpers/search-filter.pipe';
+import { ErrormessageDirective } from './helpers/directives/errormessage.directive';
  
 
 
@@ -57,6 +58,7 @@ import { SearchFilterPipe } from './helpers/search-filter.pipe';
     TablesortDirective,
     AdduserComponent,
     SearchFilterPipe,
+    ErrormessageDirective,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { SearchFilterPipe } from './helpers/search-filter.pipe';
     NgbModule,
     NgxPaginationModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

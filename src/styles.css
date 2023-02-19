@@ -19477,3 +19477,40 @@ img.icon.icon-warning {
     border-radius: 0 3px 3px 0
 }
 
+input{
+    background-color: #f5f8fa;
+    border-radius: 5px;
+    height: 32px;
+    outline: none;
+    text-transform: uppercase;
+}
+.ft-input-value {
+    background-color: #f5f8fa00;
+    border: none;
+    height: 32px;
+    outline: none;
+    width: 100%;
+    padding-left: 4px;
+    color: #5E6278 !important;
+    border-radius: 3px;
+    font-size: 14px;
+    border: solid #e3e3e3 1px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.invalid{
+    border-left: solid red 2px !important;
+}
+
+.valid{
+    border-left: solid green 2px !important;
+}
+
+.disabled {
+    border-left: solid gray 2px !important;
+}
+
+

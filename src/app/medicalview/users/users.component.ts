@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-users',
@@ -9,13 +9,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class UsersComponent implements OnInit {
   employeedata :  any
   tableConfig  :  any
-  constructor(public  modalService: NgbModal) { }
+  constructor(public  modalService: NgbModal,config: NgbModalConfig) {
+    config.backdrop = 'static';
+		config.keyboard = false;
+   }
   @ViewChild('content')  content : any
   ngOnInit(): void {
 
     this.tableConfig = {
-      "tableconfig" : {"name":"userDetails","download": true,"search":true,"showentries":true,"currentpage": true,
-      "refresh":true,"showingentries":true,"sorting": true,"pagination":true,"add":true},
+      "tableconfig" : {"name":"userDetails","title":"User Management","download": true,"search":true,"showentries":true,"currentpage": true,
+      "refresh":true,"showingentries":true,"sorting": true,"pagination":true,"add":true,"colsearch":true},
       "config" : [
         {"title":"Fullname","tbody":"name","width":"10","filter" : true},
         {"title":"Phone no","tbody":"phoneno","width":"10","filter" : true},
@@ -51,7 +54,9 @@ export class UsersComponent implements OnInit {
 
 
   headerAction(type){
-    this.modalService.open(this.content,{size: 'xl'});
+    if(type.Action=='ADD'){
+      this.modalService.open(this.content,{size: 'xl'});
+    }
   }
 
   bodyAction(type){
