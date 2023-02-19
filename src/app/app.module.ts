@@ -67,7 +67,7 @@ import { ErrormessageDirective } from './helpers/directives/errormessage.directi
     NgxPaginationModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

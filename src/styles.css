@@ -19513,4 +19513,8 @@ input{
     border-left: solid gray 2px !important;
 }
 
+.untouched {
+    border-left: solid blue 2px !important;
+}
+
 
