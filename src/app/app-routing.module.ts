@@ -14,6 +14,7 @@ import { UsersComponent } from './medicalview/users/users.component';
 import { VendorsComponent } from './medicalview/vendors/vendors.component';
 import { MaintenanceComponent } from './shared/maintenance/maintenance.component';
 import { NotFoundComponent } from './shared/not-found/not-found.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 const routes: Routes = [
   {
@@ -80,6 +81,10 @@ const routes: Routes = [
     path : '**',
     component : NotFoundComponent
   },
+  {
+    path:'spinner',
+    component: SpinnerComponent
+  }
 ];
 
 @NgModule({
