@@ -19484,7 +19484,7 @@ input{
     outline: none;
     text-transform: uppercase;
 }
-.ft-input-value {
+.input-value {
     background-color: #f5f8fa00;
     border: none;
     height: 32px;
@@ -19515,6 +19515,10 @@ input{
 
 .untouched {
     border-left: solid blue 2px !important;
+}
+
+.error-msg{
+    font-size: 12px;
 }
 
 

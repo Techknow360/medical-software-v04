@@ -1,32 +1,32 @@
-name: Medical Software
-on:
-  push:
-    branches: [ "main" ]
+# name: Medical Software
+# on:
+#   push:
+#     branches: [ "main" ]
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
 
-      - name: Set up node.js
-        uses: actions/setup-node@v3.3.0
-        with:
-          node-version: '16.x'
-          cache: 'npm'
+#       - name: Set up node.js
+#         uses: actions/setup-node@v3.3.0
+#         with:
+#           node-version: '16.x'
+#           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --force
+#       - name: Install dependencies
+#         run: npm ci --force
 
-      - name: Build
-        run: npm run build
+#       - name: Build
+#         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: crazy-max/ghaction-github-pages@v3
-        with:
-          target_branch: gh-pages
-          build_dir: dist/medical-software-v04
-          target_folder : /docs/
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#       - name: Deploy to GitHub Pages
+#         uses: crazy-max/ghaction-github-pages@v3
+#         with:
+#           target_branch: gh-pages
+#           build_dir: dist/medical-software-v04
+#           target_folder : /docs/
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

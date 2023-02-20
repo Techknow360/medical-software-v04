@@ -37,19 +37,19 @@
                 <span class="mandatory-field">*</span>
             </label>
             <div class="col-4">
-                <input placeholder="First Name" formControlName="firstName" Errormessage [FormErrors]="userFormControl.firstName.status" [isSubmitted]="isSubmitted" class="ft-input-value"  type="text">
+                <input placeholder="First Name" formControlName="firstName" Errormessage [FormErrors]="userFormControl.firstName.status" [isSubmitted]="isSubmitted" class="input-value"  type="text">
                 <div class="text-danger" *ngIf="userFormControl.firstName.errors && (isSubmitted || userFormControl.firstName.touched )">
                     <label for="" *ngIf="userFormControl.firstName.errors.required">First name is Required</label>
                 </div>
             </div>
             <div class="col-4">
-                <input placeholder="Middle Name" formControlName="middleName" Errormessage [FormErrors]="userFormControl.middleName.status" class="ft-input-value" type="text">
+                <input placeholder="Middle Name" formControlName="middleName" Errormessage [FormErrors]="userFormControl.middleName.status" class="input-value" type="text">
                 <div class="text-danger" *ngIf="userFormControl.middleName.errors && (isSubmitted || userFormControl.middleName.touched )">
                     <label for="" *ngIf="userFormControl.middleName.errors.required">Middle name is Required</label>
                 </div>
             </div>
             <div class="col-4">
-                <input placeholder="last Name" formControlName="lastName" Errormessage [FormErrors]="userFormControl.lastName.status" class="ft-input-value" type="text">
+                <input placeholder="last Name" formControlName="lastName" Errormessage [FormErrors]="userFormControl.lastName.status" class="input-value" type="text">
                 <div class="text-danger" *ngIf="userFormControl.lastName.errors && (isSubmitted || userFormControl.lastName.touched )">
                     <label for="" *ngIf="userFormControl.lastName.errors.required">Last name is Required</label>
                 </div>
@@ -59,7 +59,7 @@
             <div class="col-6">
                 <label>Father's Name<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Father Name" formControlName="fatherName" Errormessage [FormErrors]="userFormControl.fatherName.status" class="ft-input-value">
+                    <input placeholder="Father Name" formControlName="fatherName" Errormessage [FormErrors]="userFormControl.fatherName.status" class="input-value">
                     <div class="text-danger" *ngIf="userFormControl.fatherName.errors && (isSubmitted || userFormControl.fatherName.touched )">
                         <label for="" *ngIf="userFormControl.fatherName.errors.required">Father's Name is Required</label>
                     </div>
@@ -68,7 +68,7 @@
             <div class="col-6">
                 <label>Address<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Address" formControlName="address" Errormessage [FormErrors]="userFormControl.address.status" class="ft-input-value">
+                    <input placeholder="Address" formControlName="address" Errormessage [FormErrors]="userFormControl.address.status" class="input-value">
                     <div class="text-danger" *ngIf="userFormControl.address.errors && (isSubmitted || userFormControl.address.touched )">
                         <label for="" *ngIf="userFormControl.address.errors.required">Address is Required</label>
                     </div>
@@ -79,7 +79,7 @@
             <div class="col-4">
                 <label>Date of Birth<span class="mandatory-field">*</span></label>
                 <div class="input-group">
-                    <input  class="col-md-12 upper-case ft-input-value" Errormessage [FormErrors]="userFormControl.dateofbirth.status" formControlName="dateofbirth"  placeholder="DD-MM-YYYY" name="d2"  ngbDatepicker #d2="ngbDatepicker">
+                    <input  class="col-md-12 upper-case input-value" Errormessage [FormErrors]="userFormControl.dateofbirth.status" formControlName="dateofbirth"  placeholder="DD-MM-YYYY" name="d2"  ngbDatepicker #d2="ngbDatepicker">
                     <div class="input-group-append">
                       <span class="calendar" (click)="d2.toggle()" type="button">📅</span>
                     </div>
@@ -92,7 +92,7 @@
             <div class="col-4">
                 <label>Mobile Number<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Mobile Number" formControlName="mobileno" Errormessage [FormErrors]="userFormControl.mobileno.status" class="ft-input-value" type="number">
+                    <input placeholder="Mobile Number" formControlName="mobileno" Errormessage [FormErrors]="userFormControl.mobileno.status" class="input-value" type="number">
                     <div class="text-danger" *ngIf="userFormControl.mobileno.errors && (isSubmitted || userFormControl.mobileno.touched )">
                         <label for="" *ngIf="userFormControl.mobileno.errors.required">Mobile Number is Required</label>
                     </div>
@@ -101,7 +101,7 @@
             <div class="col-4">
                 <label>Email<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Email" formControlName="email"  Errormessage [FormErrors]="userFormControl.email.status" class="ft-input-value" type="email">
+                    <input placeholder="Email" formControlName="email"  Errormessage [FormErrors]="userFormControl.email.status" class="input-value" type="email">
                     <div class="text-danger" *ngIf="userFormControl.email.errors && (isSubmitted || userFormControl.email.touched )">
                         <label for="" *ngIf="userFormControl.email.errors.required">Email is Required</label>
                     </div>
@@ -123,7 +123,7 @@
             <div class="col-6">
                 <label>Location<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Location" formControlName="location" Errormessage [FormErrors]="userFormControl.location.status" class="ft-input-value">
+                    <input placeholder="Location" formControlName="location" Errormessage [FormErrors]="userFormControl.location.status" class="input-value">
                     <div class="text-danger" *ngIf="userFormControl.location.errors  && (isSubmitted || userFormControl.location.touched )">
                         <label for="" *ngIf="userFormControl.location.errors.required">Location is Required</label>
                     </div>
@@ -137,25 +137,25 @@
             <div class="col-3">
                 <label>Employment Number<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Employment Number" class="ft-input-value" type="text">
+                    <input placeholder="Employment Number" class="input-value" type="text">
                 </div>
             </div>
             <div class="col-3">
                 <label>Designation<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="ex.billing" class="ft-input-value" type="number">
+                    <input placeholder="ex.billing" class="input-value" type="number">
                 </div>
             </div>
             <div class="col-3">
                 <label>Work Mail ID<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="xyzs@mail.com" class="ft-input-value" type="email">
+                    <input placeholder="xyzs@mail.com" class="input-value" type="email">
                 </div>
             </div>
             <div class="col-3">
                 <label>Date of Joining<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="xyzs@mail.com" class="ft-input-value" type="date">
+                    <input placeholder="xyzs@mail.com" class="input-value" type="date">
                 </div>
             </div>
         </div>
@@ -166,25 +166,25 @@
             <div class="col-3">
                 <label>Account Number<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="1221111112233" class="ft-input-value">
+                    <input placeholder="1221111112233" class="input-value">
                 </div>
             </div>
             <div class="col-3">
                 <label>Account Holder Name<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="suraj ali kahn" class="ft-input-value">
+                    <input placeholder="suraj ali kahn" class="input-value">
                 </div>
             </div>
             <div class="col-3">
                 <label>Bank Name<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Bank name" class="ft-input-value" type="email">
+                    <input placeholder="Bank name" class="input-value" type="email">
                 </div>
             </div>
             <div class="col-3">
                 <label>IFSC Code<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="kkbk1234" class="ft-input-value" type="date">
+                    <input placeholder="kkbk1234" class="input-value" type="date">
                 </div>
             </div>
         </div>
@@ -192,19 +192,19 @@
             <div class="col-4">
                 <label>Account Type<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="Savings" class="ft-input-value">
+                    <input placeholder="Savings" class="input-value">
                 </div>
             </div>
             <div class="col-4">
                 <label>Aadhaar Number<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="123233333333" class="ft-input-value">
+                    <input placeholder="123233333333" class="input-value">
                 </div>
             </div>
             <div class="col-4">
                 <label>PAN<span class="mandatory-field">*</span></label>
                 <div>
-                    <input placeholder="caspb2323k" class="ft-input-value" type="email">
+                    <input placeholder="caspb2323k" class="input-value" type="email">
                 </div>
             </div>
             

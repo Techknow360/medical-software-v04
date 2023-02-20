@@ -1,75 +1,100 @@
-<div class="container section">
-    <form class="font-xs"> 
-        <div class="row form-group">
-            <label class="col-3">Phone Number
-                <span class="mandatory-field">*</span>
-                <input placeholder="9876543210"  class="ft-input-value" type="number">
-                <div class="text-danger" >
-                    <label for="" >Mobile Number is Required</label>
-                </div>
-            </label>
-            <label class="col-3">Name
-                <span class="mandatory-field">*</span>
-                <input placeholder="parthiban"  class="ft-input-value" type="text">
-                <div class="text-danger" >
-                    <label for="" >Name is Required</label>
-                </div>
-            </label>
-            <label class="col-3">Age
-                <span class="mandatory-field">*</span>
-                <input placeholder="67"  class="ft-input-value" type="number">
-                <div class="text-danger" >
-                    <label for="" >Age is Required</label>
-                </div>
-            </label>
-            <label class="col-3">ID
-                <span class="mandatory-field">*</span>
-                <input placeholder="kj"  class="ft-input-value" type="text">
-                <div class="text-danger" >
-                    <label for="" >ID is Required</label>
-                </div>
-            </label>
+<div class="container">
+    <form [formGroup]="billform">
+    <div class="row" formGroupName="customerDetails">
+        <!-- <div class="col-1">
+            <input type="text" class="input-value" placeholder="Bill No">
+        </div> -->
+        <div class="col-3" >
+            <input type="text" class="input-value" placeholder="Phone Number *" Allowonlynumber formControlName="phonenum" maxlength="10">
+            <div class="text-danger error-msg" *ngIf="customerDetailsControls.phonenum.errors && (customerDetailsControls.phonenum.touched || isSubmitted)">
+                <span *ngIf="customerDetailsControls.phonenum.errors.required">Phone Number is required</span>
+                <label *ngIf="customerDetailsControls.phonenum.errors.minlength">Phone Number should contain minimum 6 digits</label>
+                <label *ngIf="customerDetailsControls.phonenum.errors.maxlength">Phone Number should contain Maximum 10 digits</label>
+            </div>
         </div>
-        <div class="row form-group">
-            <label class="col-12">Address
-                <span class="mandatory-field">*</span>
-                <input placeholder="23,kovil street" class="ft-input-value" type="text">
-                <div class="text-danger">
-                    <label for="" > Address is required</label>
-                </div>
-            </label>
+        <div class="col-3" >
+            <div *ngIf="signleUser">
+                <input type="text" class="input-value" placeholder="Name*" formControlName="custname">
+            </div>
+            <div *ngIf="!signleUser">
+                <select name="" id="" class="input-value" formControlName="custname">
+                    <option value="null" selected disabled >SELECT</option>
+                    <option value="PARTHIBAN">PARTHIBAN</option>
+                    <option value="SIREESHA">SIREESHA</option>
+                </select>
+            </div>
+            <div class="text-danger error-msg" *ngIf="customerDetailsControls.custname.errors && (customerDetailsControls.custname.touched || isSubmitted)">
+                <span *ngIf="customerDetailsControls.custname.errors.required">Name is required</span>
+                <label *ngIf="customerDetailsControls.custname.errors.minlength">Name should contain minimum 2 digits</label>
+                <label *ngIf="customerDetailsControls.custname.errors.maxlength">Name should contain Maximum 50 digits</label>
+            </div>
         </div>
-
-    </form>
-    
-</div>
-<div class="container section">
-    <form>
-        <table class="table zp-table table-responsive table-hover reports-table">
-            <thead>
+        <div class="col-1 pr-4" *ngIf="!signleUser">
+            <button class="btn btn-light" (click)="signleUser=true">+</button>
+        </div>
+        <div class="col-1">
+            <input type="text" class="input-value" placeholder="Age*" Allowonlynumber formControlName="custage" max="100">
+            <div class="text-danger error-msg" *ngIf="customerDetailsControls.custage.errors && (customerDetailsControls.custage.touched || isSubmitted)">
+                <span *ngIf="customerDetailsControls.custage.errors.required">Age is required</span>
+                <label *ngIf="customerDetailsControls.custage.errors.max">Age is Invalid</label>
+            </div>
+        </div>
+        <div  [ngClass]="!signleUser  ? 'col-4' : 'col-5'">
+            <input type="text" class="input-value" placeholder="Address*" formControlName="custaddr">
+            <div class="text-danger error-msg" *ngIf="customerDetailsControls.custaddr.errors && (customerDetailsControls.custaddr.touched || isSubmitted)">
+                <span *ngIf="customerDetailsControls.custaddr.errors.required">Name is required</span>
+                <label *ngIf="customerDetailsControls.custaddr.errors.minlength">Name should contain minimum 2 digits</label>
+                <label *ngIf="customerDetailsControls.custaddr.errors.maxlength">Name should contain Maximum 150 digits</label>
+            </div>
+        </div>
+    </div>
+    <hr/>
+    <div>
+        <table class="table text-secondary" >
+            <thead class="bg-light">
                 <tr>
-                    <th style="width:5%;">S.No</th>
-                    <th style="width: 29%;">Product Name</th>
-                    <th> Exp date</th>
-                    <th>Quality</th>
+                    <th>SI.NO</th>
+                    <th>Product Name</th>
+                    <th>Exp date</th>
+                    <th>Quantity</th>
                     <th>Unit Price</th>
-                    <th>Discount(%)</th>
-                    <th>Tax(%)</th>
+                    <th>Discount</th>
+                    <th>Tax</th>
                     <th>Net Value</th>
+                    <th></th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th style="width:5%;"><input type="text" class="form-control"></th>
-                    <th style="width: 29%;"><input type="text" class="form-control"></th>
-                    <th> <input type="text" class="form-control"></th>
-                    <th><input type="text" class="form-control"></th>
-                    <th><input type="text" class="form-control"></th>
-                    <th><input type="text" class="form-control"></th>
-                    <th><input type="text" class="form-control"></th>
-                    <th><input type="text" class="form-control"></th>
+            <tbody formArrayName="billitems">
+                <tr *ngFor="let bills of getbillitemsTableArray.controls; let i = index" [formGroupName]="i">
+                    <td style="width:5%">{{i + 1}}</td>
+                    <td>
+                        <input type="text" class="input-value" formControlName="productname" >
+                        <!-- <div class="text-danger error-msg" *ngIf="bills[i].productname.errors && (bills[i].productname.touched || isSubmitted)">
+                            <span *ngIf="bills[i].custaddr.errors.required">Product Name is required</span>
+                        </div> -->
+                    </td>
+                    <td style="width:10%">
+                        <input type="text" class="input-value" formControlName="expirydate" >
+                    </td>
+                    <td style="width:10%">
+                        <input type="text" class="input-value" formControlName="quantity">
+                    </td>
+                    <td style="width:10%">
+                        <input type="text" class="input-value" formControlName="unitprice" >
+                    </td>
+                    <td style="width:5%">
+                        <input type="text" class="input-value" formControlName="discount">
+                    </td>
+                    <td style="width:5%">
+                        <input type="text" class="input-value" formControlName="tax">
+                    </td>
+                    <td style="width:10%">
+                        <input type="text" class="input-value" formControlName="netprice">
+                    </td>
+                    <td style="width:10%"><button class="btn-success" (click)="createBillForms()">+</button><button class="btn-danger ml-2" (click)="deleteBillForms(i)">-</button></td>
                 </tr>
             </tbody>
         </table>
-    </form>
+    </div>
+  </form>
 </div>

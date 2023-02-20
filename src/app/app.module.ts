@@ -29,6 +29,7 @@ import { TablesortDirective } from './helpers/directives/tablesort.directive';
 import { AdduserComponent } from './medicalview/users/adduser/adduser.component';
 import { SearchFilterPipe } from './helpers/pipes/search-filter.pipe';
 import { ErrormessageDirective } from './helpers/directives/errormessage.directive';
+import { AllowonlynumberDirective } from './helpers/directives/allowonlynumber.directive';
  
 
 
@@ -59,6 +60,7 @@ import { ErrormessageDirective } from './helpers/directives/errormessage.directi
     AdduserComponent,
     SearchFilterPipe,
     ErrormessageDirective,
+    AllowonlynumberDirective,
   ],
   imports: [
     BrowserModule,
