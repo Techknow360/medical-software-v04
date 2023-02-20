@@ -53,7 +53,7 @@
         <table class="table text-secondary" >
             <thead class="bg-light">
                 <tr>
-                    <th>SI.NO</th>
+                    <th></th>
                     <th>Product Name</th>
                     <th>Exp date</th>
                     <th>Quantity</th>
@@ -66,7 +66,7 @@
             </thead>
             <tbody formArrayName="billitems">
                 <tr *ngFor="let bills of getbillitemsTableArray.controls; let i = index" [formGroupName]="i">
-                    <td style="width:5%">{{i + 1}}</td>
+                    <td style="width:2%">{{i + 1}}</td>
                     <td>
                         <input type="text" class="input-value" formControlName="productname" >
                         <!-- <div class="text-danger error-msg" *ngIf="bills[i].productname.errors && (bills[i].productname.touched || isSubmitted)">
